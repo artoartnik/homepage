@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def create
   	Post.create params[:post]
-  	redirect_to root_path
+  	redirect_to root_path, :notice => 'A new post has been created.'
   end
 
   def edit
@@ -19,7 +19,14 @@ class PostsController < ApplicationController
   def update
   	post = Post.find params[:id]
   	if post.update_attributes params[:post]
-  		redirect_to root_path
+  		redirect_to root_path, :notice => 'The post was succesfully updated.'
+  	else
+  		redirect_to :back, :notice => 'There was an error updating the post.'
   	end
+  end
+
+  def destroy
+  	Post.destroy params[:id]
+  	redirect_to :back, :notice => 'The post has been deleted.'
   end
 end
