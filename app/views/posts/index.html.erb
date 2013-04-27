@@ -1,9 +1,17 @@
-<h1>Posts</h1><%= link_to 'New post', new_post_path %>
-<ul>
 <% for post in @posts %>
-<li id="post_<%= post.id %>"><%= post.title %>: <%= post.content %>
-| <%= link_to 'Edit', edit_post_path(post) %>
-| <%= link_to 'Delete', post, :method => 'delete' %>
-</li>
+
+<div id="post_<%= post.id %>">
+	<div class="well">
+		<%= post.created_at %>
+		<h3><%= post.title %></h3>
+		<%= post.content %>
+
+		<hr>
+		<div class="pull-right">
+			<%= link_to 'Edit', edit_post_path(post), class: 'btn btn-info' %>
+			<%= link_to 'Delete', post, method: 'delete', class: 'btn btn-danger' %>
+		</div>
+	</div>
+</div>
+
 <% end %>
-</ul>

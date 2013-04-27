@@ -20,7 +20,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+#JQuery
 gem 'jquery-rails'
+
+#Twitter Bootstrap
+gem 'bootstrap-sass'
 
 # Testing related gems
 group :test, :develpoment do

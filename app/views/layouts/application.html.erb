@@ -8,13 +8,32 @@
 </head>
 <body>
 
-<% flash.each do |name, message| %>
-	<div id="flash_<%= name %>">
-		<%= message %>
-	</div>
-<% end %>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <a class="brand" href="/">Homepage</a>
+    <ul class="nav">
+      <li class="active"><a href="/">Home</a></li>
+    </ul>
+    <%= link_to 'New post', new_post_path, class: "btn btn-success pull-right" %>
+  </div>
+</div>
 
-<%= yield %>
+<div id="wrapper">
+	<% flash.each do |name, message| %>
+		<div class="alert alert-success" id="flash_<%= name %>">
+			<%= message %>
+		</div>
+	<% end %>
+
+	<div class="row">
+		<div id="content" class="span8 offset1">
+			<%= yield %>
+		</div>
+		
+		<div id="sidebar" class="span3">
+		</div>
+	</div>
+</div>
 
 </body>
 </html>

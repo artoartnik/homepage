@@ -8,8 +8,14 @@ class PostsController < ApplicationController
   end
 
   def create
-  	Post.create params[:post]
-  	redirect_to root_path, :notice => 'A new post has been created.'
+  	@post = Post.new params[:post]
+
+  	if @post.save
+  		redirect_to root_path, :notice => 'A new post has been created.'
+  	else
+  		flash[:notice] = 'There was an error creating your post.'
+  		render :action => 'new', :post => @post
+  	end
   end
 
   def edit
@@ -17,11 +23,12 @@ class PostsController < ApplicationController
   end
 
   def update
-  	post = Post.find params[:id]
-  	if post.update_attributes params[:post]
+  	@post = Post.find params[:id]
+  	if @post.update_attributes params[:post]
   		redirect_to root_path, :notice => 'The post was succesfully updated.'
   	else
-  		redirect_to :back, :notice => 'There was an error updating the post.'
+  		flash[:notice] = 'There was an error updating the post.'
+  		render :action => 'edit', :post => @post
   	end
   end
 
