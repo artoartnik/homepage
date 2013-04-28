@@ -8,29 +8,34 @@
 </head>
 <body>
 
-<div class="navbar navbar-inverse">
+<div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
-    <a class="brand" href="/">Homepage</a>
-    <ul class="nav">
-      <li class="active"><a href="/">Home</a></li>
-    </ul>
-    <%= link_to 'New post', new_post_path, class: "btn btn-success pull-right" %>
+    <div class="container">
+      <button type="button" class="btn btn-navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="brand" href="/">Homepage</a>
+      <%= link_to 'New post', new_post_path, class: "btn btn-success pull-right" %>
+    </div>
   </div>
 </div>
 
-<div id="wrapper">
+<div class="container">
 	<% flash.each do |name, message| %>
 		<div class="alert alert-success" id="flash_<%= name %>">
 			<%= message %>
 		</div>
 	<% end %>
 
+
 	<div class="row">
-		<div id="content" class="span8 offset1">
-			<%= yield %>
-		</div>
-		
-		<div id="sidebar" class="span3">
+			<div id="content" class="span8 offset1">
+				<%= yield %>
+			</div>
+	
+			<div id="sidebar" class="span3">
 		</div>
 	</div>
 </div>

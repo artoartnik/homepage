@@ -1,6 +1,10 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
 
+body {
+    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
 .well {
-	overflow: hidden;
+	overflow: hidden; /* for floating elements inside a well class */
 }
