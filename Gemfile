@@ -28,7 +28,7 @@ gem 'bootstrap-sass'
 
 # Testing related gems
 group :test, :develpoment do
-	gem 'turn'
+	# gem 'turn'
 	gem 'rspec-rails'
 	gem 'capybara'
 	gem 'guard-rspec'

@@ -53,7 +53,7 @@ describe "Posts" do
   		fill_in 'Title', :with => ''
   		click_button 'Update Post'
 
-  		current_path.should == edit_post_path(@post)
+  		current_path.should == post_path(@post) #because we called 'render' instead of redirecting
   		page.should have_content 'There was an error updating the post.'
   	end
   end
