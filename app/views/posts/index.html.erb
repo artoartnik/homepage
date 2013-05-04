@@ -3,7 +3,7 @@
 <div id="post_<%= post.id %>">
 	<div class="well">
 		<%= post.created_at %>
-		<h3><%= post.title %></h3>
+		<h3><%= link_to post.title, post %></h3>
 		<%= post.content %>
 
 		<hr>
