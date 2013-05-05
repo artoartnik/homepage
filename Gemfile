@@ -27,7 +27,7 @@ gem 'jquery-rails'
 gem "bootstrap-sass", "2.3.1.0"
 
 # Testing related gems
-group :test, :develpoment do
+group :test, :development do
 	# gem 'turn'
 	gem 'rspec-rails'
 	gem 'capybara'
