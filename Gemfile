@@ -24,7 +24,7 @@ end
 gem 'jquery-rails'
 
 #Twitter Bootstrap
-gem 'bootstrap-sass'
+gem "bootstrap-sass", "2.3.1.0"
 
 # Testing related gems
 group :test, :develpoment do
