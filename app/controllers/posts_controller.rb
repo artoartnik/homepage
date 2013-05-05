@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
   def index
-  	@posts = Post.all
+  	@posts = Post.all(order: "created_at DESC")
   end
 
   def show
     @post = Post.find params[:id]
+    @comments = @post.comments.order("created_at desc")
   end
 
   def new
@@ -38,6 +39,6 @@ class PostsController < ApplicationController
 
   def destroy
   	Post.destroy params[:id]
-  	redirect_to :back, :notice => 'The post has been deleted.'
+  	redirect_to root_path, :notice => 'The post has been deleted.'
   end
 end

@@ -1,0 +1,13 @@
+<div id="errors"></div>
+<%= form_for Comment.new, :url => post_comments_path(@post) do |f| %>
+	
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :content %>
+	<%= f.text_area :content, rows: "5" %>
+
+	<br>
+	<%= f.submit %>
+
+<% end %>

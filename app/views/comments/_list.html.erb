@@ -1,0 +1,8 @@
+<div id="comments" class="container clearfix">
+<% for comment in @comments %>
+	<div class="comment well">
+		<h5><%= comment.name %></h5>
+		<p><%=comment.content %></p>
+    </div>
+<% end %>
+</div>
